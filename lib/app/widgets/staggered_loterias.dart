@@ -17,18 +17,34 @@ class StaggeredLoteria extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        childAspectRatio: aspectRatio,
-        crossAxisSpacing: spacing,
-        mainAxisSpacing: spacing,
-        mainAxisExtent: 250.0,
-      ),
-      itemBuilder: itemBuilder,
-      itemCount: loterias.length,
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-    );
+    final size = MediaQuery.of(context).size;
+
+    return (size.width < 1024)
+        ? GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 3,
+              childAspectRatio: aspectRatio,
+              crossAxisSpacing: spacing,
+              mainAxisSpacing: spacing,
+              mainAxisExtent: 260.0,
+            ),
+            itemBuilder: itemBuilder,
+            itemCount: loterias.length,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+          )
+        : GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 4,
+              childAspectRatio: aspectRatio,
+              crossAxisSpacing: spacing,
+              mainAxisSpacing: spacing,
+              mainAxisExtent: 260.0,
+            ),
+            itemBuilder: itemBuilder,
+            itemCount: loterias.length,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+          );
   }
 }
