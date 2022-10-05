@@ -18,7 +18,7 @@ class ResultadosLoteriasPage extends StatelessWidget {
           ResponsiveGridCol(
             lg: 12,
             child: Container(
-              height: 250,
+              height: 255,
               alignment: const Alignment(0, 0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:efictec_srl/app/views/resultados_view.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:efictec_srl/app/views/resultados_view.dart';
 import 'package:efictec_srl/app/shared/carousel_header.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,9 +27,11 @@ class HomePage extends StatelessWidget {
         items: [
           const ResultadosLoteriasView(),
           Container(
-            color: Colors.red,
-            child: const Center(
-              child: Text('Segunda Pantalla'),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('lib/assets/loterias/sueno.png'),
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           Container(
