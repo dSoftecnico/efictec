@@ -70,6 +70,7 @@ flutter:
   assets:
     - lib/assets/
     - lib/assets/images/
+    - lib/assets/divisas/
     - lib/assets/loterias/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

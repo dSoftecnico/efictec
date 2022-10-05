@@ -1,3 +1,4 @@
+import 'package:efictec_srl/app/widgets/divisas_cambio.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:efictec_srl/app/views/resultados_view.dart';
@@ -34,12 +35,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            color: Colors.green,
-            child: const Center(
-              child: Text('Tercera Pantalla'),
-            ),
-          ),
+          const DivisasCambio(),
           Container(
             color: Colors.blue,
             child: const Center(
