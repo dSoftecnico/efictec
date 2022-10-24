@@ -1,6 +1,9 @@
-import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:efictec_srl/app/layouts/home_page.dart';
+import 'package:efictec_srl/app/layouts/desktop_layout.dart';
+import 'package:efictec_srl/app/layouts/mobile_layout.dart';
+import 'package:efictec_srl/app/layouts/tablet_layout.dart';
+import 'package:efictec_srl/app/shared/responsive.dart';
 import 'package:flutter/material.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +23,11 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
         backgroundColor: Colors.black,
         splash: 'lib/assets/images/logo.png',
-        nextScreen: const HomePage(),
+        nextScreen: const Responsive(
+          mobileScaffold: MobileLayout(),
+          tabletScaffold: TabletLayout(),
+          desktopScaffold: DesktopLayout(),
+        ),
       ),
     );
   }
